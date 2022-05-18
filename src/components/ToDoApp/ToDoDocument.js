@@ -34,7 +34,7 @@ const ToDoDocument = ({ document,refetch}) => {
         .then(data=>{
             if(data.deletedCount > 0){
                 refetch()
-                toast('deleted')
+                toast.error('deleted')
             }
         })
 

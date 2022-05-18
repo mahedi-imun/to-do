@@ -1,13 +1,21 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
+import Login from './components/Login/Login';
+import RequireAuth from './components/ToDoApp/RequireAuth';
 import ToDoApp from './components/ToDoApp/ToDoApp';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-      <ToDoApp></ToDoApp>
+      <Routes>
+        <Route path='/' element={<RequireAuth>
+          <ToDoApp></ToDoApp>
+        </RequireAuth>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+      </Routes>
     </div>
   );
 }

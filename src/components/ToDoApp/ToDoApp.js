@@ -2,7 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import ToDoDocument from './ToDoDocument';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const ToDoApp = () => {
     const { register, handleSubmit, reset,  formState: { errors } } = useForm();
     const { data: documents, isLoading,refetch } = useQuery('todo', () => fetch('http://localhost:5000/to-do').then(res => res.json()))
@@ -62,6 +63,7 @@ const ToDoApp = () => {
 
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
 
     );

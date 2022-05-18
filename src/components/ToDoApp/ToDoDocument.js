@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const ToDoDocument = ({ document,refetch}) => {
     const { name, description,_id,complete } = document;
     const handleComplete = ()=>{
-        const url =`http://localhost:5000/to-do/${_id}`
+        const url =`https://apptasktodo.herokuapp.com/to-do/${_id}`
         fetch(url,{
             method:'PUT',
             headers: {
@@ -22,7 +22,7 @@ const ToDoDocument = ({ document,refetch}) => {
 
     };
     const handleDelete = ()=>{
-        const url =`http://localhost:5000/to-do/${_id}`
+        const url =`https://apptasktodo.herokuapp.com/to-do/${_id}`
         fetch(url,{
             method:'DELETE',
             headers: {

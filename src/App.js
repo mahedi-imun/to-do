@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
-import RequireAuth from './components/ToDoApp/RequireAuth';
+import RequireAuth from './components/Login/RequireAuth';
 import ToDoApp from './components/ToDoApp/ToDoApp';
 
 function App() {

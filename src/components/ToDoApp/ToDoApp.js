@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const ToDoApp = () => {
     const { register, handleSubmit, reset } = useForm();
-    const { data: documents, isLoading,refetch } = useQuery('todo', () => fetch('http://localhost:5000/to-do').then(res => res.json()))
+    const { data: documents, isLoading,refetch } = useQuery('todo', () => fetch('https://apptasktodo.herokuapp.com/to-do').then(res => res.json()))
     if (isLoading) {
         return <p>Loading..</p>
     }
@@ -15,7 +15,7 @@ const ToDoApp = () => {
             name: data.taskName,
             description: data.description
         }
-        fetch('http://localhost:5000/to-do', {
+        fetch('https://apptasktodo.herokuapp.com/to-do', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
